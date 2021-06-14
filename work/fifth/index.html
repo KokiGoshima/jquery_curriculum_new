@@ -100,22 +100,35 @@
 
       $(function() {
         $('.select').change(function() {
+          // var list = $('.list').find('li');
+          // var selectedValue = $(this).val();
+          // // 一度全て非表示にする
+          // list.hide();
+          // // Allを選択した場合のみ全てのliを表示させる。
+          // if (selectedValue === 'all') {
+          //   list.show();
+          // }
+          // // セレクトボックスのvalueとliのdata-category-typeが一致しているものをだけ表示させる。
+          // else {
+          //   list.each(function(index, list) {
+          //     if ($(list).data('category-type') === selectedValue) {
+          //       $(list).show();
+          //     }
+          //   })
+          // }
+
           var list = $('.list').find('li');
           var selectedValue = $(this).val();
-          // 一度全て非表示にする
-          list.hide();
-          // Allを選択した場合のみ全てのliを表示させる。
-          if (selectedValue === 'all') {
-            list.show();
-          }
+          // 一度全て表示する
+          list.show();
+          // Allを選択した場合のみ全てのliを表示させる
+          if (selectedValue === 'all') return;
           // セレクトボックスのvalueとliのdata-category-typeが一致しているものをだけ表示させる。
-          else {
-            list.each(function(index, list) {
-              if ($(list).data('category-type') === selectedValue) {
-                $(list).show();
-              }
-            })
-          }
+          list.each(function(index, li) {
+            if ($(li).data('category-type') !== selectedValue) {
+              $(li).hide();
+            }
+          })
         })
       })
     </script>
