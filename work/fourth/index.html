@@ -58,21 +58,24 @@
       // .stop() 現在動作中のアニメーション処理を全て中止します。
 
       $(function() {
-        // $('.menu__list__title').hover(function() {
-        //   $(this).next().stop().slideDown();
-        // },
-        // function() {
-        //   $(this).next().stop().slideUp();
-        // })
+        $('.menu__list').children().hover(function() {
+          $(this).children().next().stop().slideDown();
+        },
+        function() {
+          $(this).children().next().stop().slideUp();
+        })
 
-        $('.menu__list').children('li').hover(
-          function() {
-            $(this).children('.menu__list__childList').stop().slideDown();
-          },
-          function() {
-            $(this).children('.menu__list__childList').stop().slideUp();
-          }
-        )
+        // $('.menu__list').children('li').hover(
+        //   function() {
+        //     $(this).children('.menu__list__childList').stop().slideDown();
+        //   },
+        //   function() {
+        //     $(this).children('.menu__list__childList').stop().slideUp();
+        //   }
+        // )
+
+        // アニメーション予約を全て打ち消す
+        // ちゃんとクリックできるか
       })
     </script>
   </body>
