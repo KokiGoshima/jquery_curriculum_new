@@ -34,9 +34,9 @@
       $(function() {
         $('.nav').find('li').click(function() {
           var targetIndexNum = $(this).index();
-          $('.contents').find('li').addClass('is-hidden');
-          $('.contents').find('li').eq(targetIndexNum).removeClass('is-hidden');
+          $('.contents').find('li').addClass('is-hidden').eq(targetIndexNum).removeClass('is-hidden');
         })
+        // 消してから出す　の方がメンテナンス的にも安心
       })
     </script>
   </body>
